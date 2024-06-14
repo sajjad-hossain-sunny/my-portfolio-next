@@ -3,3 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #0dcaf0;
+  --white: #ffffff;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--white);
+}

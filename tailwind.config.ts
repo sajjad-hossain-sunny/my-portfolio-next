@@ -19,12 +19,16 @@ const config: Config = {
           200: "#575353",
           300: "#4C4D4D",
           400: "#6C757D",
-          500: "#F59E0B", // if any color needed to be changed, make it here
+          500: "#343A40",
           600: "#252B33",
           700: "#212529",
         },
         sideBarBg: "#111418",
         red: "#E3356F",
+        overlay: "rgba(0,0,0,0.6)",
+      },
+      backgroundImage: {
+        'hero-pattern': "url('/images/banner.jpeg')",
       },
       boxShadow: {
         btnShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.40)",
@@ -38,8 +42,9 @@ const config: Config = {
         "30": "30px",
       },
       spacing: {
-        "40": "40px",
         "70": "70px",
+        "180": "180px",
+        "166": "166px",
       },
     },
   },
