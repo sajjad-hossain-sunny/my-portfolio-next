@@ -64,7 +64,7 @@ export const Sidebar_contents = {
       socialName: "instagram",
       socialUrl: "#",
       socialIcon: <FaInstagram />,
-      bgColor: "url('/images/insta-bg.jpg')"
+      bgColor: "#E15546"
     },
     {
       id: "05",

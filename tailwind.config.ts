@@ -26,6 +26,11 @@ const config: Config = {
         sideBarBg: "#111418",
         red: "#E3356F",
         overlay: "rgba(0,0,0,0.6)",
+        facebook: "#1877F2",
+        github: "#24292e",
+        linkedin: "#0073AF",
+        whatsapp: "#25D366",
+        instagram: "#E15546",
       },
       backgroundImage: {
         'hero-pattern': "url('/images/banner.jpeg')",
