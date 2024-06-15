@@ -8,20 +8,47 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "12px",
+          xs: "10px",
+          sm: "10px",
+        },
+        screens: {
+          xs: "100%",
+          sm: "100%",
+          lg: "960px",
+          xl: "1070px",
+          "2xl": "1070px",
+        },
+      },
+      screens: {
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         syne: ["Syne", "sans-serif"],
       },
+      fontSize: {
+        '28': '28px',
+        '130': '130px',
+      },
       colors: {
         primary: "#0DCAF0",
         secondary: {
-          100: "#F2F4F4",
-          200: "#575353",
+          100: "#F2F4F4", // title color
+          200: "#575353", // paragraph texts or light black
           300: "#4C4D4D",
           400: "#6C757D",
           500: "#343A40",
-          600: "#252B33",
-          700: "#212529",
+          600: "#252B33", // dark black
+          700: "#212529", // subtitle or hard black
         },
         sideBarBg: "#111418",
         red: "#E3356F",
@@ -33,7 +60,7 @@ const config: Config = {
         instagram: "#E15546",
       },
       backgroundImage: {
-        'hero-pattern': "url('/images/banner.jpeg')",
+        "hero-pattern": "url('/images/banner.jpeg')",
       },
       boxShadow: {
         btnShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.40)",
@@ -47,6 +74,7 @@ const config: Config = {
         "30": "30px",
       },
       spacing: {
+        "3px": "3px",
         "70": "70px",
         "180": "180px",
         "166": "166px",
