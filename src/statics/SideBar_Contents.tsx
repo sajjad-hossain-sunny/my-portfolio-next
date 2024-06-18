@@ -9,7 +9,7 @@ import {
 export const Sidebar_contents = {
   name: "sajjad hossain sunny",
   description: "sajjad hossain sunny portfolio",
-  avatar: "/images/avatar.jpeg",
+  avatar: "/images/avatar-ai.jpg",
   navItems: [
     {
       id: "01",

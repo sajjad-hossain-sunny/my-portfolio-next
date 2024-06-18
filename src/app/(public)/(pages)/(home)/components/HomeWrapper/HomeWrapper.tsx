@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { AboutMe, Banner, Services } from '../../components'
+import { AboutMe, Banner, Services, Summary } from '../../components'
 
 const HomeWrapper: FC = () => {
   return (
@@ -7,6 +7,7 @@ const HomeWrapper: FC = () => {
       <Banner />
       <AboutMe />
       <Services />
+      <Summary />
     </>
   )
 }

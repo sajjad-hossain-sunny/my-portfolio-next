@@ -37,6 +37,7 @@ const config: Config = {
       },
       fontSize: {
         '22': '22px',
+        '25': '25px',
         '28': '28px',
         '130': '130px',
       },
@@ -52,13 +53,14 @@ const config: Config = {
           700: "#212529", // subtitle or hard black
         },
         sideBarBg: "#111418",
-        red: "#E3356F",
+        customRed: "#E3356F",
         overlay: "rgba(0,0,0,0.6)",
         facebook: "#1877F2",
         github: "#24292e",
         linkedin: "#0073AF",
         whatsapp: "#25D366",
         instagram: "#E15546",
+        skillBar: "#E9ECEF",
       },
       backgroundImage: {
         "hero-pattern": "url('/images/banner.jpeg')",
@@ -66,17 +68,21 @@ const config: Config = {
       boxShadow: {
         btnShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.40)",
         iconShadow: "0px 2px 5px 0px rgba(0, 0, 0, 0.25)",
-        resumeShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.15);",
+        resumeShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.25);",
         serviceShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.25)",
       },
       maxWidth: {
         customContainer: "1170px",
       },
       borderRadius: {
+        "5px": "5px",
         "30": "30px",
       },
       spacing: {
         "3px": "3px",
+        "5px": "5px",
+        "7px": "7px",
+        "13px": "13px",
         "21": "21px",
         "70": "70px",
         "76": "76px",

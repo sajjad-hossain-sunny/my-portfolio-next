@@ -39,7 +39,7 @@ const SideBar: FC<IProps> = ({ width }) => {
         {/* Social Links */}
         <div className='flex'>
           {Sidebar_contents?.socialLinks?.map(({ id, socialName, socialUrl, socialIcon, bgColor }) => (
-            <Link key={id} className="group w-7 h-7 bg-white rounded-full mx-1 duration-300 ease-out hover:w-[115px] overflow-hidden flex items-center" href={socialUrl}>
+            <Link key={id} className="group w-7 h-7 bg-white rounded-full mx-1 duration-300 ease-out hover:w-[100px] overflow-hidden flex items-center" href={socialUrl}>
               <div className={clsx('text-base min-w-7 h-7 rounded-full duration-500 group-hover:rotate-[360deg] grid place-content-center group-hover:text-white', {
                 'group-hover:bg-facebook': bgColor === '#1877F2',
                 'group-hover:bg-github': bgColor === '#24292e',
@@ -49,7 +49,7 @@ const SideBar: FC<IProps> = ({ width }) => {
               })}>
                 {socialIcon}
               </div>
-              <span className='text-sm font-medium ml-1 leading-7'>{socialName}</span>
+              <span className='text-xs font-medium ml-1 leading-7'>{socialName}</span>
             </Link>
           ))}
         </div>

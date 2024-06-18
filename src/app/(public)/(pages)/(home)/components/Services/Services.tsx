@@ -7,7 +7,7 @@ type Props = {}
 const Services: FC<Props> = () => {
   return (
     <>
-      <div className="py-70">
+      <section className="py-70">
         <CompTitle title={Services_Contents.title} sub_title={Services_Contents.sub_title} />
         <Container>
           <div className="grid grid-cols-2 gap-x-5 gap-y-50">
@@ -16,7 +16,7 @@ const Services: FC<Props> = () => {
             ))}
           </div>
         </Container>
-      </div>
+      </section>
     </>
   )
 }

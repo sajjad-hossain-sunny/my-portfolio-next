@@ -6,7 +6,7 @@ interface IProps { }
 
 const AboutMe: FC<IProps> = () => {
   return (
-    <div className='py-70'>
+    <section className='py-70'>
       <CompTitle title={AboutMe_Contents.title} sub_title={AboutMe_Contents.sub_title} />
 
       <Container>
@@ -44,7 +44,7 @@ const AboutMe: FC<IProps> = () => {
         </div>
       </Container>
 
-    </div>
+    </section>
   )
 }
 
