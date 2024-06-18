@@ -1,11 +1,12 @@
 import React, { FC } from 'react'
-import { AboutMe, Banner } from '../../components'
+import { AboutMe, Banner, Services } from '../../components'
 
 const HomeWrapper: FC = () => {
   return (
     <>
       <Banner />
       <AboutMe />
+      <Services />
     </>
   )
 }

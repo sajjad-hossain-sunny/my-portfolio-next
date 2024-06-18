@@ -1,17 +1,24 @@
+import { HamburgerIcon } from '@/app/core'
 import { Sidebar_contents } from '@/statics/SideBar_Contents'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 
 interface IProps {
   width?: number
 }
 
 const SideBar: FC<IProps> = ({ width }) => {
+  const [open, setOpen] = useState(false)
+
+  const handleHamburgerClick = () => {
+    setOpen(!open)
+  }
+
   return (
-    <nav className='col-span-1'>
-      <div className="fixed h-dvh bg-sideBarBg py-7 flex flex-col items-center justify-between" style={{ width: `calc(100% - ${width}px)` }}>
+    <nav className='col-span-5 md:col-span-1'>
+      <div className="fixed z-50 h-dvh bg-sideBarBg py-7 hidden md:flex flex-col items-center justify-between" style={{ width: `calc(100% - ${width}px)` }}>
         {/* Profile */}
         <div className="">
           <div className="h-180 w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
@@ -45,6 +52,13 @@ const SideBar: FC<IProps> = ({ width }) => {
               <span className='text-sm font-medium ml-1 leading-7'>{socialName}</span>
             </Link>
           ))}
+        </div>
+      </div>
+
+      <div className="fixed z-50 block md:hidden w-full bg-sideBarBg">
+        <div className="py-4 container flex items-center justify-between">
+          <h2 className="font-syne font-bold text-white text-lg capitalize">{Sidebar_contents.name}</h2>
+          <HamburgerIcon onClick={handleHamburgerClick} open={open}></HamburgerIcon>
         </div>
       </div>
     </nav>

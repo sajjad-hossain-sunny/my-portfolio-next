@@ -23,8 +23,8 @@ const PublicLayout: FC<PublicLayoutProps> = ({ children }) => {
   return (
     <>
       <div className="grid grid-cols-5 gap-0">
-        <SideBar width={width} />
-        <div ref={divRef} className="col-span-4">
+        <SideBar width={width} ></SideBar>
+        <div ref={divRef} className="col-span-5 md:col-span-4">
           {children}
         </div>
       </div>

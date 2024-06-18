@@ -36,6 +36,7 @@ const config: Config = {
         syne: ["Syne", "sans-serif"],
       },
       fontSize: {
+        '22': '22px',
         '28': '28px',
         '130': '130px',
       },
@@ -66,6 +67,7 @@ const config: Config = {
         btnShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.40)",
         iconShadow: "0px 2px 5px 0px rgba(0, 0, 0, 0.25)",
         resumeShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.15);",
+        serviceShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.25)",
       },
       maxWidth: {
         customContainer: "1170px",
@@ -75,10 +77,15 @@ const config: Config = {
       },
       spacing: {
         "3px": "3px",
+        "21": "21px",
         "70": "70px",
+        "76": "76px",
         "180": "180px",
         "166": "166px",
       },
+      gap: {
+        '50': '50px',
+      }
     },
   },
   plugins: [],
