@@ -41,6 +41,10 @@ const config: Config = {
         '28': '28px',
         '130': '130px',
       },
+      lineHeight: {
+        '50': '50px',
+        '83': '83px',
+      },
       colors: {
         primary: "#0DCAF0",
         secondary: {
