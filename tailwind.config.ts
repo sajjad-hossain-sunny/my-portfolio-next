@@ -58,7 +58,7 @@ const config: Config = {
         },
         sideBarBg: "#111418",
         customRed: "#E3356F",
-        overlay: "rgba(0,0,0,0.6)",
+        overlay: "rgba(0,0,0,0.7)",
         facebook: "#1877F2",
         github: "#24292e",
         linkedin: "#0073AF",
