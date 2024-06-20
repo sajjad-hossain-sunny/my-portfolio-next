@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { AboutMe_Contents } from '@/statics/AboutMe_Contents'
 import { Button, CompTitle, Container } from '@/app/core'
+import Link from 'next/link'
 
 interface IProps { }
 
@@ -23,10 +24,12 @@ const AboutMe: FC<IProps> = () => {
                 <span className="mr-1">:</span>
                 <p className="font-normal text-secondary-200">{AboutMe_Contents.information.name}</p>
               </li>
-              <li className="mb-3 md:mb-5 font-semibold text-sm text-secondary-300 flex items-center">
+              <li className="mb-3 md:mb-5 font-semibold text-sm text-secondary-300 flex items-start">
                 <span className="w-12 capitalize">email</span>
                 <span className="mr-1">:</span>
-                <a href={`mailto:${AboutMe_Contents.information.email}`} className="font-normal text-primary w-5">{AboutMe_Contents.information.email}</a>
+                <Link href={`mailto:${AboutMe_Contents.information.email}`} className="font-normal text-primary w-3/4 landscape:lg:w-3/4 landscape:xl:w-auto lg:w-auto break-words">
+                  {AboutMe_Contents.information.email}
+                </Link>
               </li>
               <li className="mb-3 md:mb-5 font-semibold text-sm capitalize text-secondary-300 flex items-center">
                 <span className="w-12">age</span>
