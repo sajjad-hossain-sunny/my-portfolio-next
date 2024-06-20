@@ -14,7 +14,7 @@ interface RootLayoutProps {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className="font-poppins overflow-x-hidden">
+      <body className="font-poppins ">
         {children}
       </body>
     </html>

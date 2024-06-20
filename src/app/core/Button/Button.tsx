@@ -10,7 +10,7 @@ type Props = {
 const Button: FC<Props> = ({ btnTitle, href, className }) => {
   return (
     <Link
-      className={`${className} customBtn px-6 py-2 bg-primary text-white font-medium text-base rounded-[100px] border-0 inline-block touch-manipulation select-none duration-300 hover:scale-105 hover:rotate-2`}
+      className={`${className} customBtn px-6 py-2 bg-primary text-white font-medium text-sm md:text-base rounded-[100px] border-0 inline-block touch-manipulation select-none duration-300 hover:scale-105 hover:rotate-2`}
       href={"#"}
       shallow
     >

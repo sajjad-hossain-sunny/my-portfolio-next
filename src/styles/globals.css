@@ -13,9 +13,9 @@
   background-color: var(--primary);
   color: var(--white);
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 /* CSS */
 .customBtn {

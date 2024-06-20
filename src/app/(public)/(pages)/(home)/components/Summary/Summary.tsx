@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { CompTitle, Container, SkillBar, SummaryCard } from '@/app/core'
+import { ButtonBorder, CompTitle, Container, SkillBar, SummaryCard } from '@/app/core'
 import { Summary_Contents } from '@/statics/Summary_Contents'
 import { AllSkills } from '@/statics/AllSkills'
 
@@ -57,11 +57,14 @@ const Summary: FC<Props> = () => {
               {
                 AllSkills?.skills?.map(({ id, skillName, proficiency }) => (
                   <div key={id} className="col-span-1">
-                    <SkillBar skillName={skillName} proficiency={proficiency}/>
+                    <SkillBar skillName={skillName} proficiency={proficiency} />
                   </div>
                 ))
               }
             </div>
+          </div>
+          <div className="col-span-2 grid place-content-center">
+            <ButtonBorder />
           </div>
         </div>
       </Container>

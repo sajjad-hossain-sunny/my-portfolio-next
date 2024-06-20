@@ -24,7 +24,7 @@ const PublicLayout: FC<PublicLayoutProps> = ({ children }) => {
     <>
       <div className="grid grid-cols-5 gap-0">
         <SideBar width={width} ></SideBar>
-        <div ref={divRef} className="col-span-5 md:col-span-4">
+        <div ref={divRef} className="col-span-5 md:portrait:col-span-5 md:col-span-4">
           {children}
         </div>
       </div>

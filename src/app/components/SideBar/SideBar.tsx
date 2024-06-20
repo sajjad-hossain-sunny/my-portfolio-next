@@ -17,12 +17,13 @@ const SideBar: FC<IProps> = ({ width }) => {
   }
 
   return (
+    // <div className="col-span-5 md:col-span-1"></div>
     <nav className='col-span-5 md:col-span-1'>
-      <div className="fixed z-50 h-dvh bg-sideBarBg py-7 hidden md:flex flex-col items-center justify-between" style={{ width: `calc(100% - ${width}px)` }}>
+      <div className="fixed z-50 h-dvh bg-sideBarBg py-6 hidden md:portrait:hidden md:flex flex-col items-center justify-between px-1" style={{ width: `calc(100% - ${width}px)` }}>
         {/* Profile */}
         <div className="">
-          <div className="h-180 w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
-            <div className="w-166 h-166 rounded-full overflow-hidden">
+          <div className="h-166 w-166 lg:h-180 lg:w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
+            <div className="w-152 h-152 lg:w-166 lg:h-166 rounded-full overflow-hidden">
               <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} />
             </div>
           </div>
@@ -55,9 +56,32 @@ const SideBar: FC<IProps> = ({ width }) => {
         </div>
       </div>
 
-      <div className="fixed z-50 block md:hidden w-full bg-sideBarBg">
-        <div className="py-4 container flex items-center justify-between">
-          <h2 className="font-syne font-bold text-white text-lg capitalize">{Sidebar_contents.name}</h2>
+      <div className="fixed z-50 block portrait:block md:hidden w-full bg-sideBarBg">
+        <div className="py-3 md:portrait:py-5 container flex items-center justify-between">
+          <div className="flex items-center">
+            <div className="h-10 w-10 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mr-2">
+              <div className="w-9 h-9 lg:w-166 lg:h-166 rounded-full overflow-hidden">
+                <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} />
+              </div>
+            </div>
+            <h2 className="font-syne font-bold text-white text-lg md:text-2xl capitalize">{Sidebar_contents.name}</h2>
+            <div className='flex ml-5 portrait:hidden md:portrait:flex'>
+              {Sidebar_contents?.socialLinks?.map(({ id, socialName, socialUrl, socialIcon, bgColor }) => (
+                <Link key={id} className="group w-7 h-7 bg-white rounded-full mx-1 duration-300 ease-out hover:w-[100px] overflow-hidden flex items-center" href={socialUrl}>
+                  <div className={clsx('text-base min-w-7 h-7 rounded-full duration-500 group-hover:rotate-[360deg] grid place-content-center group-hover:text-white', {
+                    'group-hover:bg-facebook': bgColor === '#1877F2',
+                    'group-hover:bg-github': bgColor === '#24292e',
+                    'group-hover:bg-linkedin': bgColor === '#0073AF',
+                    'group-hover:bg-whatsapp': bgColor === '#25D366',
+                    'group-hover:bg-instagram': bgColor === '#E15546',
+                  })}>
+                    {socialIcon}
+                  </div>
+                  <span className='text-xs font-medium ml-1 leading-7'>{socialName}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
           <HamburgerIcon onClick={handleHamburgerClick} open={open}></HamburgerIcon>
         </div>
       </div>

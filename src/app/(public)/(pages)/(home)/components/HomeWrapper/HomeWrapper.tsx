@@ -6,8 +6,8 @@ const HomeWrapper: FC = () => {
     <>
       <Banner />
       <AboutMe />
-      <Services />
-      <Summary />
+      {/* <Services /> */}
+      {/* <Summary /> */}
     </>
   )
 }

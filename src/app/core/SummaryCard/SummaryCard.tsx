@@ -24,7 +24,7 @@ const SummaryCard: FC<Props> = ({ duration, institute, major, course, descriptio
   const modifiedEndMonth = endMonth?.slice(0, 3);
 
   return (
-    <div className="w-full rounded-5px shadow-resumeShadow p-5 pb-4 capitalize cursor-pointer min-h-44">
+    <div className="w-full rounded-5px shadow-resumeShadow p-5 pb-4 capitalize cursor-pointer duration-500 min-h-44 overflow-hidden relative before:absolute before:-top-1/2 before:-left-[145px] before:bg-primary before:w-7 before:h-[500px] before:opacity-40 before:duration-500 before:rotate-[35deg] hover:before:left-full hover:before:translate-x-full hover:scale-105">
       <div className="text-xs font-normal text-white py-5px px-13px rounded-5px bg-primary inline-block mb-3.5">
         {`${modifiedStartMonth} ${duration?.startYear} - ${modifiedEndMonth} ${duration?.endYear}`}
       </div>

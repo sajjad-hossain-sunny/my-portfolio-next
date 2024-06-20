@@ -5,3 +5,4 @@ export * from "./HamburgerIcon";
 export * from "./ServicesCard";
 export * from "./SummaryCard";
 export * from "./SkillBar";
+export * from "./ButtonBorder";
