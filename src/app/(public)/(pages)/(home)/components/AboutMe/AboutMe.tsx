@@ -7,7 +7,7 @@ interface IProps { }
 
 const AboutMe: FC<IProps> = () => {
   return (
-    <section className='py-10 md:py-70'>
+    <section className='py-14 md:py-70'>
       <CompTitle title={AboutMe_Contents.title} sub_title={AboutMe_Contents.sub_title} />
 
       <Container>
@@ -18,7 +18,7 @@ const AboutMe: FC<IProps> = () => {
             <p className="text-sm leading-5 md:leading-6 text-secondary-600 text-justify">{AboutMe_Contents.description2}</p>
           </div>
           <div className="col-span-3 md:col-span-1">
-            <ul className="mb-10">
+            <ul className="mb-10 mt-2">
               <li className="mb-3 md:mb-5 font-semibold text-sm capitalize text-secondary-300 flex items-center">
                 <span className="w-12">name</span>
                 <span className="mr-1">:</span>

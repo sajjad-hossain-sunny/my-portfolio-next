@@ -7,7 +7,7 @@ type Props = {}
 
 const Summary: FC<Props> = () => {
   return (
-    <section className='py-70'>
+    <section className='py-10 md:py-70'>
       <CompTitle title={Summary_Contents.title} sub_title={Summary_Contents.sub_title} />
       <Container >
         <div className="grid grid-cols-2 gap-x-8 gap-y-10">
