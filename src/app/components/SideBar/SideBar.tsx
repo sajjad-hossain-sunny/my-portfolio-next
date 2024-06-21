@@ -13,14 +13,6 @@ interface IProps {
 const SideBar: FC<IProps> = ({ width }) => {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
-  // console.log(Sidebar_contents.navItems[0].navRoute);
-
-  // if (Sidebar_contents.navItems[0].navRoute === pathname) {
-  //   alert("ok")
-  // } else {
-  //   alert("not")
-  // }
-
 
   const handleHamburgerClick = () => {
     setOpen(!open)
