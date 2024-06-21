@@ -3,6 +3,7 @@ import { Sidebar_contents } from '@/statics/SideBar_Contents'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { FC, useState } from 'react'
 
 interface IProps {
@@ -11,14 +12,22 @@ interface IProps {
 
 const SideBar: FC<IProps> = ({ width }) => {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  // console.log(Sidebar_contents.navItems[0].navRoute);
+
+  // if (Sidebar_contents.navItems[0].navRoute === pathname) {
+  //   alert("ok")
+  // } else {
+  //   alert("not")
+  // }
+
 
   const handleHamburgerClick = () => {
     setOpen(!open)
   }
 
   return (
-    // <div className="col-span-5 md:col-span-1"></div>
-    <nav className='col-span-5 md:col-span-1'>
+    <nav className='col-span-5 md:col-span-1 relative'>
       <div className="fixed z-50 h-dvh bg-sideBarBg py-6 hidden md:portrait:hidden md:flex flex-col items-center justify-between px-1" style={{ width: `calc(100% - ${width}px)` }}>
         {/* Profile */}
         <div className="">
@@ -32,7 +41,7 @@ const SideBar: FC<IProps> = ({ width }) => {
         {/* Nav Items */}
         <ul className="">
           {Sidebar_contents?.navItems?.map(({ id, navBtn, navRoute }) => (
-            <li key={id} className="capitalize text-white text-base mt-3.5 py-0.5 text-center select-none duration-300 relative after:content-[''] after:absolute after:h-[2px] after:w-full after:left-0 after:bottom-0 after:bg-primary after:transition-all after:duration-500 after:ease-in-out after:scale-x-0 hover:after:scale-x-125 hover:text-primary">
+            <li key={id} className={`capitalize text-base mt-3.5 py-0.5 text-center select-none duration-300 relative after:content-[''] after:absolute after:h-[2px] after:w-full after:left-0 after:bottom-0 after:bg-primary after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-125 hover:text-primary cursor-pointer ${navRoute === pathname ? "after:scale-x-125 text-primary" : "text-white after:scale-x-0"}`}>
               <Link className="" href={navRoute}>{navBtn}</Link>
             </li>
           ))}
@@ -56,8 +65,8 @@ const SideBar: FC<IProps> = ({ width }) => {
         </div>
       </div>
 
-      <div className="fixed z-50 block portrait:block md:hidden w-full bg-sideBarBg">
-        <div className="py-3 md:portrait:py-5 container flex items-center justify-between">
+      <div className="fixed z-50 block portrait:block md:hidden w-full ">
+        <div className="container flex items-center justify-between py-3 md:portrait:py-5 relative z-50 bg-sideBarBg">
           <div className="flex items-center">
             <div className="h-10 w-10 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mr-2">
               <div className="w-9 h-9 lg:w-166 lg:h-166 rounded-full overflow-hidden">
@@ -83,6 +92,15 @@ const SideBar: FC<IProps> = ({ width }) => {
             </div>
           </div>
           <HamburgerIcon onClick={handleHamburgerClick} open={open}></HamburgerIcon>
+        </div>
+        <div className="relative z-30">
+          <ul className={`w-full bg-glass pt-2 pb-3.5 px-24 border-b-[1px] border-glass absolute top-0 left-0 duration-500 backdrop-blur-sm ${open ? "translate-y-0" : "-translate-y-full"}`}>
+            {Sidebar_contents?.navItems?.map(({ id, navBtn, navRoute }) => (
+              <li key={id} className={`capitalize text-base mt-1 py-1.5 text-center select-none duration-300 hover:text-primary cursor-pointer relative after:content-[''] after:absolute after:h-[2px] after:w-full after:left-0 after:bottom-0 after:bg-primary after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 ${navRoute === pathname ? "after:scale-x-100 text-primary" : "text-white after:scale-x-0"}`}>
+                <Link className="" onClick={() => setOpen(false)} href={navRoute}>{navBtn}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </nav>

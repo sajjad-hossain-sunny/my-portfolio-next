@@ -66,6 +66,7 @@ const config: Config = {
         whatsapp: "#25D366",
         instagram: "#E15546",
         skillBar: "#E9ECEF",
+        glass: "rgba(0, 0, 0, 0.2)",
       },
       backgroundImage: {
         "hero-pattern": "url('/images/banner.jpeg')",

@@ -14,12 +14,12 @@ export const Sidebar_contents = {
     {
       id: "01",
       navBtn: "home",
-      navRoute: "/home"
+      navRoute: "/"
     },
     {
       id: "02",
-      navBtn: "About Me",
-      navRoute: "/about-me"
+      navBtn: "my skills",
+      navRoute: "/skills"
     },
     {
       id: "03",
