@@ -29,7 +29,7 @@ const SkillBarInner = styled.div<{ proficiency: number }>`
 const SkillBar: FC<Props> = ({ skillName, proficiency = 0 }) => {
   return (
     <>
-      <div className="font-medium text-base text-secondary-600 capitalize mb-2.5 flex items-center justify-between">
+      <div className="font-medium text-sm md:text-base text-secondary-600 capitalize mb-1.5 md:mb-2.5 flex items-center justify-between">
         <span>{skillName}</span>
         <span>{`${proficiency}%`}</span>
       </div>
