@@ -6,3 +6,5 @@ export * from "./ServicesCard";
 export * from "./SummaryCard";
 export * from "./SkillBar";
 export * from "./ButtonBorder";
+export * from "./FilterButtons";
+export * from "./HomeProjectCard";

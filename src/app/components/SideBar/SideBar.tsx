@@ -20,7 +20,7 @@ const SideBar: FC<IProps> = ({ width }) => {
 
   return (
     <nav className='col-span-5 md:col-span-1 relative'>
-      <div className="fixed z-50 h-dvh bg-sideBarBg py-6 hidden md:portrait:hidden md:flex flex-col items-center justify-between px-1" style={{ width: `calc(100% - ${width}px)` }}>
+      <div className="fixed z-50 h-full overflow-y-auto bg-sideBarBg py-6 hidden md:portrait:hidden md:flex flex-col items-center justify-between px-1" style={{ width: `calc(100% - ${width}px)` }}>
         {/* Profile */}
         <div className="">
           <div className="h-166 w-166 lg:h-180 lg:w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
@@ -33,7 +33,7 @@ const SideBar: FC<IProps> = ({ width }) => {
         {/* Nav Items */}
         <ul className="">
           {Sidebar_contents?.navItems?.map(({ id, navBtn, navRoute }) => (
-            <li key={id} className={`capitalize text-base mt-3.5 py-0.5 text-center select-none duration-300 relative after:content-[''] after:absolute after:h-[2px] after:w-full after:left-0 after:bottom-0 after:bg-primary after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-125 hover:text-primary cursor-pointer ${navRoute === pathname ? "after:scale-x-125 text-primary" : "text-white after:scale-x-0"}`}>
+            <li key={id} className={`capitalize text-base my-3.5 py-0.5 text-center select-none duration-300 relative after:content-[''] after:absolute after:h-[2px] after:w-full after:left-0 after:bottom-0 after:bg-primary after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-125 hover:text-primary cursor-pointer ${navRoute === pathname ? "after:scale-x-125 text-primary" : "text-white after:scale-x-0"}`}>
               <Link className="" href={navRoute}>{navBtn}</Link>
             </li>
           ))}

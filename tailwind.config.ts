@@ -60,13 +60,14 @@ const config: Config = {
         sideBarBg: "#111418",
         customRed: "#E3356F",
         overlay: "rgba(0,0,0,0.7)",
+        projectOverlay: "rgba(0,0,0,0.5)",
         facebook: "#1877F2",
         github: "#24292e",
         linkedin: "#0073AF",
         whatsapp: "#25D366",
         instagram: "#E15546",
         skillBar: "#E9ECEF",
-        glass: "rgba(0, 0, 0, 0.2)",
+        glass: "rgba(0, 0, 0, 0.4)",
       },
       backgroundImage: {
         "hero-pattern": "url('/images/banner.jpeg')",
@@ -82,6 +83,7 @@ const config: Config = {
       },
       borderRadius: {
         "5px": "5px",
+        "7px": "7px",
         "30": "30px",
       },
       spacing: {
