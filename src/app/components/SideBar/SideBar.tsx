@@ -23,7 +23,7 @@ const SideBar: FC<IProps> = ({ width }) => {
       <div className="fixed z-50 h-full overflow-y-auto bg-sideBarBg py-6 hidden md:portrait:hidden md:flex flex-col items-center justify-between px-1" style={{ width: `calc(100% - ${width}px)` }}>
         {/* Profile */}
         <div className="">
-          <div className="h-36 w-h-36 lg:h-180 lg:w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
+          <div className="h-[136px] w-[136px] lg:h-180 lg:w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
             <div className="w-32 h-32 lg:w-166 lg:h-166 rounded-full overflow-hidden">
               <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} />
             </div>
@@ -39,10 +39,10 @@ const SideBar: FC<IProps> = ({ width }) => {
           ))}
         </ul>
         {/* Social Links */}
-        <div className='flex'>
+        <div className='flex mt-2'>
           {Sidebar_contents?.socialLinks?.map(({ id, socialName, socialUrl, socialIcon, bgColor }) => (
             <Link key={id} className="group w-6 lg:w-7 h-6 lg:h-7 bg-white rounded-full mx-0.5 lg:mx-1 duration-300 ease-out hover:w-[100px] overflow-hidden flex items-center" href={socialUrl}>
-              <div className={clsx('text-base min-w-7 h-7 rounded-full duration-500 group-hover:rotate-[360deg] grid place-content-center group-hover:text-white', {
+              <div className={clsx('text-base min-w-6 lg:min-w-7 h-6 lg:h-7 rounded-full duration-500 group-hover:rotate-[360deg] grid place-content-center group-hover:text-white', {
                 'group-hover:bg-facebook': bgColor === '#1877F2',
                 'group-hover:bg-github': bgColor === '#24292e',
                 'group-hover:bg-linkedin': bgColor === '#0073AF',

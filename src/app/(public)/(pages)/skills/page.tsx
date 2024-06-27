@@ -4,7 +4,7 @@ type Props = {}
 
 const page: FC<Props> = () => {
   return (
-    <div>Skills</div>
+    <div className='grid place-content-center h-dvh font-bold text-5xl'>page is being ready</div>
   )
 }
 
