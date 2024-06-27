@@ -31,7 +31,7 @@ const HomeProjectCard: FC<Props> = ({
     onClick(id);
   }
   return (
-    <div onClick={handleClick} className={`mix all ${techStack} col-span-12 portrait:md:col-span-6 landscape:col-span-6 landscape:xl:col-span-4 lg:col-span-4 h-52 landscape:md:h-56 landscape:xl:h-48 rounded-7px bg-teal-500 cursor-pointer overflow-hidden relative group shadow-resumeShadow`}>
+    <div onClick={handleClick} className={`mix all ${techStack} col-span-12 portrait:md:col-span-6 landscape:col-span-6 landscape:xl:col-span-4 lg:col-span-4 h-52 landscape:md:h-56 landscape:xl:h-48 rounded-7px cursor-pointer overflow-hidden relative group shadow-resumeShadow`}>
       <Image
         className='group-hover:scale-110 duration-500 object-cover w-full h-full'
         src={thumbnail}

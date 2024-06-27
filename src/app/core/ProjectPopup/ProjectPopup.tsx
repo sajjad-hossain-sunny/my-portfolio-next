@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import React, { FC } from 'react'
 import { Button } from '../Button';
+import Image from 'next/image';
 
 type DesignerInfo = {
   uiDesignerName: string,
   uiDesignerSource: string
+}
+type ProjectMockup = {
+  id: number,
+  mockup: string
 }
 
 type ProjectDetails = {
@@ -16,6 +21,7 @@ type ProjectDetails = {
   designSourceTitle: string,
   industry: string,
   technologies: Array<string>,
+  projectMockups: Array<ProjectMockup>,
   designerInfo: DesignerInfo
 }
 
@@ -29,10 +35,35 @@ type Props = {
   projectData?: ProjectData,
 }
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+};
+
 const ProjectPopup: FC<Props> = ({ projectData }) => {
   return (
-    <div className="grid grid-cols-12 gap-5">
-      <div className="col-span-12 md:col-span-7 h-60 md:h-popupGallery bg-teal-500">
+    <div className="grid grid-cols-12 gap-x-5 gap-y-14">
+      <div className="col-span-12 md:col-span-7 h-60 md:h-popupGallery relative">
+        {
+          projectData?.projectDetails?.projectMockups?.map(({ id, mockup }) => (
+            <div key={id} className="w-full h-full shadow-resumeShadow">
+              <Image
+                src={mockup}
+                alt="project"
+                className="object-cover w-full h-full object-left-top"
+                width={500} height={500} />
+            </div>
+          ))
+        }
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full py-5 flex">
+          <div className="w-2 h-2 bg-primary rounded-full cursor-pointer mx-2 relative before:w-5 before:h-5 before:bg-transparent before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-full" />
+          <div className="w-2.5 h-2.5 bg-secondary-400 rounded-full cursor-pointer mx-3 relative before:w-5 before:h-5 before:bg-transparent before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:border-2 before:border-transparent before:rounded-full" />
+        </div>
       </div>
       <div className="col-span-12 md:col-span-5 capitalize">
         <div className="">

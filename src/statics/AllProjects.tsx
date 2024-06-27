@@ -40,7 +40,7 @@ export const AllProjects = {
       projectDetails: {
         client: "",
         industry: "",
-        technologies: ["react.js", "JavaScript", "tailwind css", "firebase", "redux" ],
+        technologies: ["react.js", "JavaScript", "tailwind css", "firebase", "redux"],
         designerInfo: {
           uiDesignerName: "",
           uiDesignerSource: "",
@@ -49,6 +49,12 @@ export const AllProjects = {
         designSourceTitle: "",
         sourceCode: "https://github.com/sajjadsunny-dev/ConnectWith---ChatApp",
         projectCompleteData: "",
+        projectMockups: [
+          {
+            id: 1,
+            mockup: "/images/projects/connectwith/md-device.png"
+          }
+        ]
       },
     },
     {
@@ -71,6 +77,12 @@ export const AllProjects = {
         designSourceTitle: "",
         sourceCode: "https://github.com/sajjadsunny-dev/QWERy",
         projectCompleteDate: "11 feb, 2022",
+        projectMockups: [
+          {
+            id: 1,
+            mockup: "/images/projects/qwery/xl-device.png"
+          }
+        ]
       },
     },
     {
@@ -93,6 +105,12 @@ export const AllProjects = {
         designSourceTitle: "",
         sourceCode: "https://github.com/sajjadsunny-dev/my-portfolio-next",
         projectCompleteData: "",
+        projectMockups: [
+          {
+            id: 1,
+            mockup: "/images/projects/sajjad-sunny/xl-device.png"
+          }
+        ]
       },
     },
     {
@@ -115,6 +133,12 @@ export const AllProjects = {
         designSourceTitle: "",
         sourceCode: "https://github.com/sajjadsunny-dev/Cyber-E-commerce",
         projectCompleteData: "",
+        projectMockups: [
+          {
+            id: 1,
+            mockup: "/images/projects/cyber/xl-device.png"
+          }
+        ]
       },
     },
     {
@@ -137,6 +161,12 @@ export const AllProjects = {
         designSourceTitle: "",
         sourceCode: "https://github.com/sajjadsunny-dev/FoodMood",
         projectCompleteData: "",
+        projectMockups: [
+          {
+            id: 1,
+            mockup: "/images/projects/fooddelivery/xl-device.png"
+          }
+        ]
       },
     },
   ],
