@@ -1,7 +1,7 @@
 "use client";
 
-import { CompTitle, Container, FilterButtons, HomeProjectCard } from '@/app/core';
-import React, { FC, useEffect, useRef } from 'react';
+import { CompTitle, Container, FilterButtons, HomeProjectCard, Popup, ProjectPopup } from '@/app/core';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { AllProjects } from '@/statics/AllProjects';
 import mixitup from 'mixitup';
 
@@ -9,6 +9,8 @@ type Props = {};
 
 const Portfolio: FC<Props> = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [projectData, setProjectData] = useState<any>({});
 
   useEffect(() => {
     if (typeof window !== 'undefined' && containerRef.current) {
@@ -29,19 +31,39 @@ const Portfolio: FC<Props> = () => {
     }
   }, []);
 
+  const handleClick = (cardId: number) => {
+    setPopupOpen(true);
+    const project = AllProjects.projects.find((project) => project.id === cardId);
+    setProjectData(project);
+  }
+
   return (
-    <section className='py-10 md:py-70'>
+    <section className='pt-14 md:pt-73 pb-12 md:pb-67'>
       <CompTitle title={AllProjects.title} sub_title={AllProjects.sub_title} />
       <Container>
         <FilterButtons projectFilters={AllProjects.projectFilters} />
         {/* project cards */}
-        <div ref={containerRef} className="grid grid-cols-12 gap-4 mt-6 md:mt-10 min-h-56">
-          {AllProjects.projects?.map(({ id, projectName, projectTechStack }) => (
-            <HomeProjectCard key={id} projectName={projectName} projectTechStack={projectTechStack} />
+        <div ref={containerRef} className="grid grid-cols-12 gap-5 mt-6 md:mt-10 min-h-56">
+          {AllProjects.projects?.map(({ id, projectName, projectType, projectTags, thumbnail }) => (
+            <HomeProjectCard
+              key={id}
+              id={id}
+              onClick={() => handleClick(id)}
+              projectName={projectName}
+              projectType={projectType}
+              projectTags={projectTags}
+              thumbnail={thumbnail}
+            />
           ))}
         </div>
         {/* project cards */}
       </Container>
+
+      {/* popup */}
+      <Popup title={projectData.projectName} popupOpen={popupOpen} setPopupOpen={setPopupOpen} >
+        <ProjectPopup projectData={projectData}/>
+      </Popup>
+      {/* popup */}
     </section>
   );
 };

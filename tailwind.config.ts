@@ -68,6 +68,7 @@ const config: Config = {
         instagram: "#E15546",
         skillBar: "#E9ECEF",
         glass: "rgba(0, 0, 0, 0.4)",
+        componentBg: "#F8F9FA",
       },
       backgroundImage: {
         "hero-pattern": "url('/images/banner.jpeg')",
@@ -92,12 +93,15 @@ const config: Config = {
         "7px": "7px",
         "13px": "13px",
         "21": "21px",
+        "67": "67px",
         "70": "70px",
+        "73": "73px",
         "76": "76px",
         "136": "136px",
         "152": "152px",
         "166": "166px",
         "180": "180px",
+        "popupGallery": "750px",
       },
       gap: {
         '50': '50px',
