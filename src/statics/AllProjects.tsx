@@ -81,7 +81,11 @@ export const AllProjects = {
           {
             id: 1,
             mockup: "/images/projects/qwery/xl-device.png"
-          }
+          },
+          {
+            id: 2,
+            mockup: "/images/projects/qwery/xl-device.png"
+          },
         ]
       },
     },

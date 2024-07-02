@@ -1,6 +1,6 @@
 "use client";
 
-import { CompTitle, Container, FilterButtons, HomeProjectCard, Popup, ProjectPopup } from '@/app/core';
+import { ButtonBorder, CompTitle, Container, FilterButtons, HomeProjectCard, Popup, ProjectPopup } from '@/app/core';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { AllProjects } from '@/statics/AllProjects';
 import mixitup from 'mixitup';
@@ -56,12 +56,15 @@ const Portfolio: FC<Props> = () => {
             />
           ))}
         </div>
+        <div className="col-span-2 flex justify-center mt-7 md:mt-10">
+          <ButtonBorder title="show more projects" href="/projects" />
+        </div>
         {/* project cards */}
       </Container>
 
       {/* popup */}
       <Popup title={projectData.projectName} popupOpen={popupOpen} setPopupOpen={setPopupOpen} >
-        <ProjectPopup projectData={projectData}/>
+        <ProjectPopup projectData={projectData} />
       </Popup>
       {/* popup */}
     </section>

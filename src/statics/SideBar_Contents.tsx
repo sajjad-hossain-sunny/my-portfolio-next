@@ -41,35 +41,35 @@ export const Sidebar_contents = {
     {
       id: "01",
       socialName: "facebook",
-      socialUrl: "#",
+      socialUrl: "https://www.facebook.com/sajjadsunny.dev",
       socialIcon: <FaFacebookF />,
       bgColor: "#1877F2"
     },
     {
       id: "02",
       socialName: "github",
-      socialUrl: "#",
+      socialUrl: "https://github.com/sajjadsunny-dev",
       socialIcon: <FaGithub />,
       bgColor: "#24292e"
     },
     {
       id: "03",
       socialName: "linkedin",
-      socialUrl: "#",
+      socialUrl: "https://linkedin.com/in/sajjad-hossain-sunny",
       socialIcon: <FaLinkedinIn />,
       bgColor: "#0073AF"
     },
     {
       id: "04",
       socialName: "instagram",
-      socialUrl: "#",
+      socialUrl: "https://www.instagram.com/sajjadsunny.dev/",
       socialIcon: <FaInstagram />,
       bgColor: "#E15546"
     },
     {
       id: "05",
       socialName: "whatsapp",
-      socialUrl: "#",
+      socialUrl: "https://wa.me/qr/MJJI7ZQB6EWYF1",
       socialIcon: <FaWhatsapp />,
       bgColor: "#25D366"
     }

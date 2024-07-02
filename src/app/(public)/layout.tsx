@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type FC, type ReactNode } from 'react';
-import { SideBar } from '../components';
+import { Footer, SideBar } from '../components';
 
 interface PublicLayoutProps {
   children: ReactNode;
@@ -26,6 +26,7 @@ const PublicLayout: FC<PublicLayoutProps> = ({ children }) => {
         <SideBar width={width} ></SideBar>
         <div ref={divRef} className="col-span-5 md:portrait:col-span-5 md:col-span-4">
           {children}
+          <Footer />
         </div>
       </div>
     </>

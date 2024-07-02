@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React, { FC } from 'react'
 import { Button } from '../Button';
 import Image from 'next/image';
+import useSlider from '@/hooks/useSlider';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 type DesignerInfo = {
   uiDesignerName: string,
@@ -35,22 +37,18 @@ type Props = {
   projectData?: ProjectData,
 }
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-};
-
 const ProjectPopup: FC<Props> = ({ projectData }) => {
+  const { scrollNext, scrollPrev, settings, sliderRef, Slider } = useSlider();
   return (
     <div className="grid grid-cols-12 gap-x-5 gap-y-14">
-      <div className="col-span-12 md:col-span-7 h-60 md:h-popupGallery relative">
-        {
-          projectData?.projectDetails?.projectMockups?.map(({ id, mockup }) => (
+      <div className="col-span-12 group md:col-span-7 h-60 md:h-popupGallery relative cursor-pointer shadow-resumeShadow">
+
+        <Slider
+          ref={sliderRef}
+          {...settings}
+          className='h-full overflow-clip'
+        >
+          {projectData?.projectDetails?.projectMockups?.map(({ id, mockup }) => (
             <div key={id} className="w-full h-full shadow-resumeShadow">
               <Image
                 src={mockup}
@@ -58,12 +56,24 @@ const ProjectPopup: FC<Props> = ({ projectData }) => {
                 className="object-cover w-full h-full object-left-top"
                 width={500} height={500} />
             </div>
-          ))
-        }
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full py-5 flex">
-          <div className="w-2 h-2 bg-primary rounded-full cursor-pointer mx-2 relative before:w-5 before:h-5 before:bg-transparent before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-full" />
-          <div className="w-2.5 h-2.5 bg-secondary-400 rounded-full cursor-pointer mx-3 relative before:w-5 before:h-5 before:bg-transparent before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 before:border-2 before:border-transparent before:rounded-full" />
-        </div>
+          ))}
+        </Slider>
+
+        <button
+          className='w-6 h-6 lg:w-9 lg:h-9 absolute top-1/2 left-0 translate-x-3 -translate-y-1/2 cursor-pointer bg-slate-100 rounded-full grid place-content-center shadow-lg duration-200 opacity-100 lg:opacity-0 group-hover:opacity-100'
+          onClick={scrollPrev}
+          aria-label='Scroll to previous'
+        >
+          <MdKeyboardArrowLeft className='text-xl lg:text-3xl text-secondary-600' />
+        </button>
+        <button
+          className='w-6 h-6 lg:w-9 lg:h-9 absolute top-1/2 right-0 -translate-x-3 -translate-y-1/2 cursor-pointer bg-slate-100 rounded-full grid place-content-center shadow-lg duration-200 opacity-100 lg:opacity-0 group-hover:opacity-100'
+          onClick={scrollNext}
+          aria-label='Scroll to next'
+        >
+          <MdKeyboardArrowRight className='text-xl lg:text-3xl text-secondary-600' />
+        </button>
+
       </div>
       <div className="col-span-12 md:col-span-5 capitalize">
         <div className="">

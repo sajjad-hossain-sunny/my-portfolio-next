@@ -64,7 +64,7 @@ const Summary: FC<Props> = () => {
             </div>
           </div>
           <div className="col-span-2 grid place-content-center">
-            <ButtonBorder />
+            <ButtonBorder title="show all skills" href="/skills"/>
           </div>
         </div>
       </Container>

@@ -101,7 +101,7 @@ const config: Config = {
         "152": "152px",
         "166": "166px",
         "180": "180px",
-        "popupGallery": "750px",
+        "popupGallery": "600px",
       },
       gap: {
         '50': '50px',
