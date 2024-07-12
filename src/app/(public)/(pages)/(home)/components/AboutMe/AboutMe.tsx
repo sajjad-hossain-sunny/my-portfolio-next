@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+"use client";
+import React, { FC, useEffect, useState } from 'react'
 import { AboutMe_Contents } from '@/statics/AboutMe_Contents'
 import { Button, CompTitle, Container } from '@/app/core'
 import Link from 'next/link'
@@ -6,6 +7,29 @@ import Link from 'next/link'
 interface IProps { }
 
 const AboutMe: FC<IProps> = () => {
+  const [age, setAge] = useState<number | null>(null);
+
+  useEffect(() => {
+    const calculateAge = (birthDateString: string) => {
+      const birthDate = new Date(birthDateString);
+      
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDifference = today.getMonth() - birthDate.getMonth();
+
+      if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      } else {
+        age ++
+      }
+
+      return age;
+    };
+
+    const myBirthDate = AboutMe_Contents.information.dateOfBirth;
+    setAge(calculateAge(myBirthDate));
+  }, []);
+
   return (
     <section className='pt-14 md:pt-73 pb-12 md:pb-67'>
       <CompTitle title={AboutMe_Contents.title} sub_title={AboutMe_Contents.sub_title} />
@@ -34,7 +58,7 @@ const AboutMe: FC<IProps> = () => {
               <li className="mb-3 md:mb-5 font-semibold text-sm capitalize text-secondary-300 flex items-center">
                 <span className="w-12">age</span>
                 <span className="mr-1">:</span>
-                <p className="font-normal text-secondary-200">{AboutMe_Contents.information.age}</p>
+                <p className="font-normal text-secondary-200">{age}</p>
               </li>
               <li className="mb-3 md:mb-5 font-semibold text-sm capitalize text-secondary-300 flex items-center">
                 <span className="w-12">from</span>

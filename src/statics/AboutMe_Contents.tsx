@@ -8,7 +8,7 @@ export const AboutMe_Contents = {
     name: "Sajjad Hossain Sunny",
     position: "Front-End Web Developer",
     email: "sajjadhossainsunny.dev@gmail.com",
-    age: "25",
+    dateOfBirth: "1998-03-11",
     from: " Dhaka, Bangladesh",
     CV_download: "#",
   }

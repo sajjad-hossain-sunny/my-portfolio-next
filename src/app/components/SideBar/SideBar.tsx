@@ -25,7 +25,7 @@ const SideBar: FC<IProps> = ({ width }) => {
         <div className="">
           <div className="h-[136px] w-[136px] lg:h-180 lg:w-180 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mx-auto">
             <div className="w-32 h-32 lg:w-166 lg:h-166 rounded-full overflow-hidden">
-              <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} />
+              <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} priority />
             </div>
           </div>
           <h2 className="font-syne font-bold text-white text-lg lg:text-xl capitalize tracking-wider mt-5 text-center">{Sidebar_contents.name}</h2>
@@ -57,12 +57,13 @@ const SideBar: FC<IProps> = ({ width }) => {
         </div>
       </div>
 
+      {/* responsive */}
       <div className="fixed z-50 block portrait:block md:hidden w-full ">
         <div className="container flex items-center justify-between py-3 md:portrait:py-5 relative z-50 bg-sideBarBg">
           <div className="flex items-center">
             <div className="h-10 w-10 bg-secondary-500 rounded-full grid place-items-center cursor-grab select-none mr-2">
               <div className="w-9 h-9 lg:w-166 lg:h-166 rounded-full overflow-hidden">
-                <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} />
+                <Image className='w-full object-cover' src={Sidebar_contents.avatar} alt="avatar" width={180} height={180} priority />
               </div>
             </div>
             <h2 className="font-syne font-bold text-white text-lg md:text-2xl capitalize">{Sidebar_contents.name}</h2>

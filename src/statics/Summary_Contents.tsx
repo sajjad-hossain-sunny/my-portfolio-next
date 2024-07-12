@@ -76,7 +76,7 @@ export const Summary_Contents = {
         description: "Full stack web development using mordern frameworks like React and Node.js. Express and MongoDB for backend.",
       },
       {
-        id: "01",
+        id: "02",
         duration: {
           startMonth: "april",
           startYear: 2022,
