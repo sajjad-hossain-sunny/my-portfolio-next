@@ -1,4 +1,4 @@
 export const Banner_Contents = {
-  heading: ["i'm sajjad hossain sunny.", "a web developer.", "a web designer."],
+  heading: ["Sajjad Hossain Sunny.", "a Web Designer.", "a Front-end Developer.", "a React Developer."],
   location: 'dhaka, bangladesh.',
 }
