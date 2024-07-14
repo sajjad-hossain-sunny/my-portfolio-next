@@ -1,5 +1,6 @@
 import { HamburgerIcon } from '@/app/core'
 import { Sidebar_contents } from '@/statics/SideBar_Contents'
+import { cn } from '@/utils'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -42,13 +43,7 @@ const SideBar: FC<IProps> = ({ width }) => {
         <div className='flex mt-2'>
           {Sidebar_contents?.socialLinks?.map(({ id, socialName, socialUrl, socialIcon, bgColor }) => (
             <Link key={id} className="group w-6 lg:w-7 h-6 lg:h-7 bg-white rounded-full mx-0.5 lg:mx-1 duration-300 ease-out hover:w-[100px] overflow-hidden flex items-center" href={socialUrl}>
-              <div className={clsx('text-base min-w-6 lg:min-w-7 h-6 lg:h-7 rounded-full duration-500 group-hover:rotate-[360deg] grid place-content-center group-hover:text-white', {
-                'group-hover:bg-facebook': bgColor === '#1877F2',
-                'group-hover:bg-github': bgColor === '#24292e',
-                'group-hover:bg-linkedin': bgColor === '#0073AF',
-                'group-hover:bg-whatsapp': bgColor === '#25D366',
-                'group-hover:bg-instagram': bgColor === '#E15546',
-              })}>
+              <div className={cn('text-base min-w-6 lg:min-w-7 h-6 lg:h-7 rounded-full duration-500 group-hover:rotate-[360deg] grid place-content-center group-hover:text-white', bgColor)}>
                 {socialIcon}
               </div>
               <span className='text-xs font-medium ml-1 leading-7'>{socialName}</span>
