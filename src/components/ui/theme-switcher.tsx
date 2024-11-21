@@ -39,7 +39,7 @@ export function ThemeSwitcher() {
             )
           }
       </div>
-      <div className="px-2 py-2 bg-white rounded-bl-lg w-max">
+      <div className="px-2 py-2 bg-white dark:bg-slate-100 rounded-bl-lg w-max">
         <h2 className="capitalize font-semibold font-syne md:text-secondary-500 mb-2.5 mx-2">theme switcher</h2>
         <div
           onClick={toggleTheme}
