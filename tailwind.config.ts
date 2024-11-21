@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -36,27 +37,32 @@ const config: Config = {
         syne: ["Syne", "sans-serif"],
       },
       fontSize: {
-        '22': '22px',
-        '25': '25px',
-        '28': '28px',
-        '42': '42px',
-        '52': '52px',
-        '130': '130px',
+        "22": "22px",
+        "25": "25px",
+        "28": "28px",
+        "42": "42px",
+        "52": "52px",
+        "130": "130px",
       },
       lineHeight: {
-        '50': '50px',
-        '83': '83px',
+        "50": "50px",
+        "83": "83px",
       },
       colors: {
-        primary: "#0DCAF0",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
         secondary: {
-          100: "#F2F4F4", // title color
-          200: "#575353", // paragraph texts or light black
-          300: "#4C4D4D",
-          400: "#6C757D",
-          500: "#343A40",
-          600: "#252B33", // dark black
-          700: "#212529", // subtitle or hard black
+          100: "hsl(var(--secondary-100))", //title color
+          "200": "#575353", //paragraph texts or light black
+          "300": "#4C4D4D",
+          "400": "#6C757D",
+          "500": "#343A40",
+          600: "hsl(var(--secondary-600))", //dark black
+          "700": "#212529", //subtitle or hard black color
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         sideBarBg: "#111418",
         customRed: "#E3356F",
@@ -70,6 +76,38 @@ const config: Config = {
         skillBar: "#E9ECEF",
         glass: "rgba(0, 0, 0, 0.4)",
         componentBg: "#F8F9FA",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
+        },
       },
       backgroundImage: {
         "hero-pattern": "url('/images/banner.jpeg')",
@@ -80,6 +118,9 @@ const config: Config = {
         resumeShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.25);",
         serviceShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.25)",
       },
+      dropShadow: {
+        '3xl': '0 5px 8px rgba(0, 0, 0, 0.20)',
+      },
       maxWidth: {
         customContainer: "1170px",
       },
@@ -87,12 +128,17 @@ const config: Config = {
         "5px": "5px",
         "7px": "7px",
         "30": "30px",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       spacing: {
         "3px": "3px",
         "5px": "5px",
         "7px": "7px",
         "13px": "13px",
+        4.5: "18px",
+        5.5: "22px",
         "21": "21px",
         "67": "67px",
         "70": "70px",
@@ -102,13 +148,13 @@ const config: Config = {
         "152": "152px",
         "166": "166px",
         "180": "180px",
-        "popupGallery": "600px",
+        popupGallery: "600px",
       },
       gap: {
-        '50': '50px',
-      }
+        "50": "50px",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")],
 };
 export default config;

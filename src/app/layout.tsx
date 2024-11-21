@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import { ThemeProvider } from '@/provider/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Portfolio - Sajjad Hossain Sunny',
@@ -15,7 +16,9 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body className="font-poppins ">
-        {children}
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

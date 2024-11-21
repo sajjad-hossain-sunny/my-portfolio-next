@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type FC, type ReactNode } from 'react';
 import { Footer, SideBar } from '../components';
+import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 
 interface PublicLayoutProps {
   children: ReactNode;
@@ -29,6 +30,7 @@ const PublicLayout: FC<PublicLayoutProps> = ({ children }) => {
           <Footer />
         </div>
       </div>
+      <ThemeSwitcher ></ThemeSwitcher>
     </>
   );
 };
