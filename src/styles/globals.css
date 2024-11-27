@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 95%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -73,18 +73,12 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply scrollbar-none md:scrollbar-thin scrollbar-thumb-primary scrollbar-track-zinc-900;
+    @apply scrollbar-none md:scrollbar-thin scrollbar-thumb-primary scrollbar-track-zinc-900 selection:bg-primary dark:selection:bg-primary selection:text-white;
   }
-}
-
-::selection {
-  background-color: var(--primary);
-  color: var(--white);
 }
 
 /* CSS */
 .customBtn {
-  /* color: rgb(8, 172, 204); */
   box-shadow: rgba(13, 202, 240, 0.2) 0 -25px 18px -14px inset,
     rgba(13, 202, 240, 0.15) 0 1px 2px, rgba(13, 202, 240, 0.15) 0 2px 4px,
     rgba(13, 202, 240, 0.15) 0 4px 8px, rgba(13, 202, 240, 0.15) 0 8px 16px,
@@ -97,4 +91,7 @@
     rgba(13, 202, 240, 0.25) 0 4px 8px, rgba(13, 202, 240, 0.25) 0 8px 16px,
     rgba(13, 202, 240, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
+}
+.custom-bezier * {
+  @apply transition-all duration-400 ease-custom-bezier;
 }

@@ -119,7 +119,7 @@ const config: Config = {
         serviceShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.25)",
       },
       dropShadow: {
-        '3xl': '0 5px 8px rgba(0, 0, 0, 0.20)',
+        "3xl": "0 5px 8px rgba(0, 0, 0, 0.20)",
       },
       maxWidth: {
         customContainer: "1170px",
@@ -152,6 +152,12 @@ const config: Config = {
       },
       gap: {
         "50": "50px",
+      },
+      transitionTimingFunction: {
+        "custom-bezier": "cubic-bezier(0.995, -0.265, 0.855, 0.505)",
+      },
+      transitionDuration: {
+        400: "400ms",
       },
     },
   },
