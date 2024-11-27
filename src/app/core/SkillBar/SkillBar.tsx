@@ -20,7 +20,7 @@ const SkillBar: FC<Props> = ({ skillName, proficiency = 0 }) => {
             gsap.fromTo(
               currentBarRef,
               { width: '0%' },
-              { width: `${proficiency}%`, duration: 2 }
+              { width: `${proficiency}%`, duration: 1 }
             );
           } else if (currentBarRef) {
             gsap.to(currentBarRef, { width: '0%', duration: 0 });
@@ -52,7 +52,7 @@ const SkillBar: FC<Props> = ({ skillName, proficiency = 0 }) => {
       <div className="h-2 w-full bg-[#E9ECEF] rounded overflow-hidden">
         <div
           ref={barRef}
-          className="h-full bg-primary rounded"
+          className="h-full bg-primary rounded duration-0"
           style={{ width: '0%' }} // Initially set to 0
         ></div>
       </div>

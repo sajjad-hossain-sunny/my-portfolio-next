@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type FC, type ReactNode } from 'react';
-import { Footer, SideBar } from '../components';
+import { SideBar, Footer, SplashScreen } from '@/components/ui';
 import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 
 interface PublicLayoutProps {
@@ -8,29 +8,46 @@ interface PublicLayoutProps {
 }
 
 const PublicLayout: FC<PublicLayoutProps> = ({ children }) => {
-  const divRef = useRef<HTMLDivElement>(null);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
   const [width, setWidth] = useState(0);
 
-  const updateWidth = () => { if (divRef.current) setWidth(divRef.current.clientWidth) };
+  const updateWidth = () => {
+    if (sidebarRef.current) setWidth(sidebarRef.current.clientWidth);
+  };
 
   useEffect(() => {
     updateWidth();
     window.addEventListener('resize', updateWidth);
+
     return () => {
       window.removeEventListener('resize', updateWidth);
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      updateWidth();
+    }, 4000);
+    clearTimeout(timer);
+  }, [isVisible]);
+
   return (
     <>
-      <div className="grid grid-cols-5 gap-0">
-        <SideBar width={width} ></SideBar>
-        <div ref={divRef} className="col-span-5 md:portrait:col-span-5 md:col-span-4">
-          {children}
-          <Footer />
+      {isVisible && <SplashScreen />}
+      <div className={`${isVisible ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+        <div className={`grid grid-cols-5 gap-0`}>
+          <SideBar width={width}></SideBar>
+          <div ref={sidebarRef} className="col-span-5 md:portrait:col-span-5 md:col-span-4 gap-0">
+            <div className={`w-full ${isVisible ? "hidden" : "block"}`}>
+              {children}
+              <Footer />
+            </div>
+          </div>
         </div>
+        <ThemeSwitcher />
       </div>
-      <ThemeSwitcher ></ThemeSwitcher>
     </>
   );
 };
