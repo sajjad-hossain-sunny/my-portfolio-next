@@ -29,8 +29,13 @@ const PublicLayout: FC<PublicLayoutProps> = ({ children }) => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       updateWidth();
+<<<<<<< HEAD
     }, 3000);
     return () => clearTimeout(timer);
+=======
+    }, 4000);
+    clearTimeout(timer);
+>>>>>>> e9db9d1dce4f197c3529e647274120e48c11c1b9
   }, [isVisible]);
 
   return (
