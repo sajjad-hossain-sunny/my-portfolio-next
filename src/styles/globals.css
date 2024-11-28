@@ -95,3 +95,20 @@
 .custom-bezier * {
   @apply transition-all duration-400 ease-custom-bezier;
 }
+
+@keyframes spin-pause {
+  0% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(720deg); /* Hold position after spinning */
+  }
+  100% {
+    transform: rotate(720deg); /* Complete the pause */
+  }
+}
+
+.spin-icon {
+  display: inline-block;
+  animation: spin-pause 2s infinite ease-in-out alternate; /* Adjust duration as needed */
+}
